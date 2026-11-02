@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<base target="_top">
+<meta charset="UTF-8">
+<style>
+  :root { --indigo:#193B55; --washi:#F1EBDD; --vermilion:#A33B30; }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; min-height:100vh; display:flex; flex-direction:column;
+    background:var(--washi); color:var(--indigo);
+    font-family:"Microsoft JhengHei","Noto Sans TC",sans-serif;
+  }
+  header { background:var(--indigo); color:#fff; padding:18px 28px;
+           display:flex; align-items:center; gap:14px; }
+  .mn { width:40px; height:40px; border:2px solid #fff; border-radius:6px;
+        display:grid; place-items:center; font-weight:700; letter-spacing:1px; }
+  .brand b { font-size:18px; letter-spacing:3px; display:block; }
+  .brand small { font-size:10px; letter-spacing:2px; opacity:.75; }
+  .notice { background:var(--vermilion); color:#fff; text-align:center;
+            padding:10px; font-size:14px; letter-spacing:1px; }
+  main { flex:1; display:flex; justify-content:center; padding:40px 16px; }
+  .card { background:#fff; border-radius:14px; max-width:680px; width:100%;
+          padding:36px 32px; box-shadow:0 4px 18px rgba(25,59,85,.10); }
+  h1 { margin:0 0 6px; font-size:24px; line-height:1.4; }
+  .old { color:#999; text-decoration:line-through; font-size:14px; margin-bottom:24px; }
+  .block { border-left:4px solid var(--vermilion); padding:4px 0 4px 16px; margin:20px 0 28px; }
+  h3 { margin:0 0 8px; font-size:16px; }
+  ul { margin:0; padding-left:20px; line-height:1.9; }
+
+  .go { display:flex; align-items:stretch; gap:10px; margin-top:16px; flex-wrap:wrap; }
+  .btn { display:inline-flex; align-items:center; padding:12px 28px;
+         background:var(--indigo); color:#fff; border-radius:8px;
+         text-decoration:none; letter-spacing:2px; white-space:nowrap; transition:.2s; }
+  .btn:hover { background:var(--vermilion); }
+  .url-box { flex:1; min-width:240px; display:flex; align-items:center;
+             background:var(--washi); border:1px solid rgba(25,59,85,.25);
+             border-left:4px solid var(--vermilion); border-radius:8px; overflow:hidden; }
+  .url-box a { flex:1; padding:0 14px; color:var(--indigo); text-decoration:none;
+               font-size:14px; letter-spacing:.5px; word-break:break-all; }
+  .url-box a:hover { color:var(--vermilion); }
+  .copy { border:0; border-left:1px solid rgba(25,59,85,.2); background:transparent;
+          color:var(--indigo); padding:0 16px; align-self:stretch; cursor:pointer;
+          font-family:inherit; font-size:13px; letter-spacing:1px; }
+  .copy:hover { background:var(--indigo); color:#fff; }
+
+  .slogan-line { margin-top:28px; padding-top:18px; border-top:1px solid rgba(25,59,85,.15);
+                 text-align:center; letter-spacing:4px; font-size:13px; color:var(--vermilion); }
+  footer { text-align:center; padding:24px 16px; font-size:12px; line-height:1.9;
+           color:rgba(25,59,85,.8); }
+  footer .f-name { letter-spacing:1px; font-weight:700; margin-bottom:2px; }
+  footer .f-note { max-width:640px; margin:6px auto 0; font-size:11px; opacity:.8; }
+</style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <b>MINATO NOVA</b>
+      <small></small>
+    </div>
+  </header>
+
+  <div class="notice">舊網址已停止服務，請改用新網址</div>
+
+  <main>
+    <div class="card">
+      <h1>MINATO NOVA 雲端資訊管理平台 V3.0（現已更新）</h1>
+      <div class="old">( • ̀ω•́ ) 資訊檔案系統</div>
+
+      <div class="block">
+        <h3>服務已截止</h3>
+        本網站已於 <b>2026/10/31</b> 停止服務。<br>
+        請前往新平台繼續使用：
+        <div class="go">
+          <a class="btn" href="https://minato0122.pse.is/mnova" target="_blank" rel="noopener">前往新平台</a>
+          <div class="url-box">
+            <a href="https://minato0122.pse.is/mnova" target="_blank" rel="noopener">https://minato0122.pse.is/mnova</a>
+            <button class="copy" id="copyBtn" type="button">複製</button>
+          </div>
+        </div>
+      </div>
+
+      <h3>首次登入須知</h3>
+      <ul>
+        <li>請使用您的預設帳號密碼登入，詳情請洽管理員</li>
+        <li>首次登入後，請至「個人資訊」綁定電子郵件及修改帳戶密碼(選用)</li>
+        <li>綁定完成後，下次即可使用信箱直接驗證登入</li>
+      </ul>
+
+      <div class="slogan-line">靜謐運行，卓越不凡。</div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="f-name">MINATO NOVA Cloud Information Management Platform</div>
+    <div>© 2026 MINATO NOVA. All Rights Reserved. · V3.0</div>
+    <div class="f-note">本頁之設計、版面與程式內容，版權均屬 MINATO NOVA 所有，未經授權不得轉載、重製、散布或作商業用途。</div>
+  </footer>
+
+<script>
+  document.getElementById('copyBtn').addEventListener('click', function () {
+    var url = 'https://minato0122.pse.is/mnova', btn = this;
+    function done() { btn.textContent = '已複製'; setTimeout(function(){ btn.textContent = '複製'; }, 1800); }
+    var t = document.createElement('textarea');
+    t.value = url; document.body.appendChild(t); t.select();
+    try { document.execCommand('copy'); done(); } catch (e) { btn.textContent = '請手動複製'; }
+    document.body.removeChild(t);
+  });
+</script>
+</body>
+</html>
